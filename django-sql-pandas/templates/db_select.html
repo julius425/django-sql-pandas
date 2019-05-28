@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+    <div class="pt-1">
+        <h1>{{profile.name}}</h1>
+      <div class="container">
+        {% for dbase in databases %}
+        <h5><b>Database Name: {{dbase.db_name}}</b></h5>
+        <p>Database Ip: {{dbase.db_address}}</p>
+        <p>MySQL database name: {{dbase.sql_name}}</p>
+        <p>User: {{dbase.db_user}}</p>
+        <a href="{% url 'node_select' dbase.id %}" class="btn btn-primary btn-dark">Select DataBase</a>
+        <a href="{% url 'database_update' dbase.id %}" class="btn btn-primary btn-dark">Update DataBase Profile</a>
+        <a href="{% url 'database_delete' dbase.id %}" class="btn btn-primary btn-dark">Delete DataBase Profile</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="container pt-4">
+
+        <div class="row">
+            <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <!--<input type="submit" class="btn btn-primary" name="nunique" value="Node non-unique messages" />-->
+            <input type="submit" class="btn btn-primary btn-dark" value="Add Database"/>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

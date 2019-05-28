@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+
+    <div class="container col py-3 px-md-5">
+        <h5>Node log : </h5>
+    </div>
+    <!--<img src='/static/figures/fig.png'>-->
+    <div class="container col py-3 px-md-5">
+        {% if data %}
+          {{ data|safe }}
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+
+    <div class="container">
+        <p>Current database: {{database.db_name}}</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <!--<input type="submit" class="btn btn-primary" name="nunique" value="Node non-unique messages" />-->
+            <input type="submit" class="btn btn-primary btn-dark" value="Select Node"/>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+<!--<div class="container">-->
+        <!--<a href="{% url 'node' %}" class="btn btn-primary">Select Node</a>-->
+        <!--<div class="row">-->
+            <!--<form method="POST">-->
+            <!--{% csrf_token %}-->
+            <!--{{form.as_p}}-->
+            <!--<input type="submit" class="btn btn-primary" name="nunique" value="Node non-unique messages" />-->
+            <!--<input type="submit" class="btn btn-primary" name="log" value="Node Log" />-->
+            <!--<input type="submit" class="btn btn-primary" name="plot" value="Node Plot" />-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->

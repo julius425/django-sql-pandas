@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+
+   <div class="container col py-3 px-md-5">
+       <h5>Node plot:</h5>
+       {% for sim in sims %}
+       <p>{{sim}}</p>
+       {% endfor %}
+   </div>
+
+    <div class="container col py-3 px-md-5">
+        {% if graphic %}
+          <img src="data:image/png;base64,{{ graphic|safe }}">
+        {% endif %}
+    </div>
+
+{% endblock %}

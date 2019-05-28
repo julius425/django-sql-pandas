@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Latest reviews</h2>
+{% endblock %}
+
+{% block content %}
+{% if model_list %}
+<div>
+    {% for model in model_list %}
+    <div>
+        <h4><a href="{# url 'sampleapp:model_detail' model.id #}">
+        {{ model.name }}
+        </a></h4>
+        <h6>rated {{ model.rating }} of 5 by {{ model.user_name }}</h6>
+        <p>{{ model.comment }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No reviews are available.</p>
+{% endif %}
+{% endblock %}

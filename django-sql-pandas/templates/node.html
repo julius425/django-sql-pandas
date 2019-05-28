@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+
+    {% if node %}
+    <div class="container col py-3 px-md-5">
+        <h5>Node - {{node.node_id}}</h5>
+        <p>Last Messages Received: </p>
+        {{node.last_messages|safe}}
+    </div>
+    <div class="container col py-3 px-md-5">
+        <div class="row">
+            <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <a href="{% url 'frame_nunique' node.node_id %}" class="btn btn-primary btn-dark" name="nunique" >Node non-unique messages</a>
+            <a href="{% url 'frame_log' node.node_id %}" class="btn btn-primary btn-dark" name="log" >Node Log</a>
+            <a href="{% url 'frame_plot' node.node_id %}" class="btn btn-primary btn-dark" name="plot" >Node Plot</a>
+            <a href="{% url 'time_diff_plot' node.node_id %}" class="btn btn-primary btn-dark" name="plot" >Time Difference Plot</a>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

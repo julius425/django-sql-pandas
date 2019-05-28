@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block frame_content %}
+
+    <div class="container col py-3 px-md-5">
+        <h5>Node messages: </h5>
+    </div>
+    <div class="container col py-3 px-md-5">
+        {% if data %}
+          {{ data|safe }}
+        {% endif %}
+    </div>
+
+{% endblock %}
