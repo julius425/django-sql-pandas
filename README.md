@@ -5,7 +5,7 @@ https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md
 
 # Django-sql-pandas
 
-Allows to show Mysql table converted to DataFrame within Django project. 
+Allows to show MySQL table converted to DataFrame with Django web app. 
 
 ## Getting Started
 ```
