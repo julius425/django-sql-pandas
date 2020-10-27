@@ -1,5 +1,5 @@
 Django==2.2
-cryptography==2.6.1
+cryptography==3.2
 gevent==1.4.0
 gunicorn==19.9.0
 matplotlib==3.0.3
